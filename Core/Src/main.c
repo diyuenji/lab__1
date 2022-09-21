@@ -191,6 +191,7 @@ void setNumberOnClock(int num)
 void realclock(int sec,int min,int hour){
 sec=sec/5;
 min=min/5;
+if(hour>=12) hour=hour-12;
 clearAllClock();
 	if(sec==0||min==0||hour==0)
 	{
