@@ -284,16 +284,27 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  //clearAllClock();
+
   //int count =0;
+  int sec=0;
+  int min=0;
+  int hour =0;
   while (1)
   {
     /* USER CODE END WHILE */
-
-	  int sec,min,hour;
-	  sec=10;min=34;hour=23;
+	  if(sec>=60) {
+		  sec=0;
+			min++;
+	  }
+	  if(min>=60){
+		  min=0;
+		  hour++;
+	  }
+	  if(hour>=12) hour=hour-12;
+	  clearAllClock();
 	  realclock(sec,min,hour);
-	  HAL_Delay(1000);
+	  sec=sec+1;
+	  HAL_Delay(100);
   }
   /* USER CODE END 3 */
 }
