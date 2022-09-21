@@ -291,7 +291,7 @@ int main(void)
     /* USER CODE END WHILE */
 
 	  int sec,min,hour;
-	  sec=10;min=34;hour=9;
+	  sec=10;min=34;hour=23;
 	  realclock(sec,min,hour);
 	  HAL_Delay(1000);
   }

@@ -445,12 +445,12 @@ int main(void)
     /* USER CODE END WHILE */
 
 	  int sec,min,hour;
-	  sec=10;min=34;hour=9;
+	  sec=10;min=34;hour=23;
  800039e:	230a      	movs	r3, #10
  80003a0:	60fb      	str	r3, [r7, #12]
  80003a2:	2322      	movs	r3, #34	; 0x22
  80003a4:	60bb      	str	r3, [r7, #8]
- 80003a6:	2309      	movs	r3, #9
+ 80003a6:	2317      	movs	r3, #23
  80003a8:	607b      	str	r3, [r7, #4]
 	  realclock(sec,min,hour);
  80003aa:	687a      	ldr	r2, [r7, #4]
