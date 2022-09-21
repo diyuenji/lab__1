@@ -78,22 +78,6 @@ void clearAllClock()
 	HAL_GPIO_WritePin ( LED_11_GPIO_Port , LED_11_Pin ,GPIO_PIN_SET ) ;
 
 }
-void setAllClock()
-{
-	HAL_GPIO_WritePin ( LED_0_GPIO_Port , LED_0_Pin ,GPIO_PIN_RESET ) ;
-	HAL_GPIO_WritePin ( LED_1_GPIO_Port , LED_1_Pin ,GPIO_PIN_RESET ) ;
-	HAL_GPIO_WritePin ( LED_2_GPIO_Port , LED_2_Pin ,GPIO_PIN_RESET ) ;
-	HAL_GPIO_WritePin ( LED_3_GPIO_Port , LED_3_Pin ,GPIO_PIN_RESET ) ;
-	HAL_GPIO_WritePin ( LED_4_GPIO_Port , LED_4_Pin ,GPIO_PIN_RESET ) ;
-	HAL_GPIO_WritePin ( LED_5_GPIO_Port , LED_5_Pin ,GPIO_PIN_RESET ) ;
-	HAL_GPIO_WritePin ( LED_6_GPIO_Port , LED_6_Pin ,GPIO_PIN_RESET ) ;
-	HAL_GPIO_WritePin ( LED_7_GPIO_Port , LED_7_Pin ,GPIO_PIN_RESET ) ;
-	HAL_GPIO_WritePin ( LED_8_GPIO_Port , LED_8_Pin ,GPIO_PIN_RESET ) ;
-	HAL_GPIO_WritePin ( LED_9_GPIO_Port , LED_9_Pin ,GPIO_PIN_RESET ) ;
-	HAL_GPIO_WritePin ( LED_10_GPIO_Port , LED_10_Pin ,GPIO_PIN_RESET ) ;
-	HAL_GPIO_WritePin ( LED_11_GPIO_Port , LED_11_Pin ,GPIO_PIN_RESET ) ;
-
-}
 
 void clearNumberOnClock(int num)
 {
@@ -268,104 +252,8 @@ clearAllClock();
 			HAL_GPIO_WritePin ( LED_11_GPIO_Port , LED_11_Pin ,
 																   	  	  	 GPIO_PIN_RESET ) ;
 		}
-
 }
-/*void turnsequence()
-{
-	int x=0;
-	clearAllClock();
-	while(x<=11){
-	switch(x){
-	case 0:
-		HAL_GPIO_WritePin ( LED_0_GPIO_Port , LED_0_Pin ,
-										   	  	  	 GPIO_PIN_RESET ) ;
-		HAL_Delay(100);
-		x++;
-		HAL_GPIO_WritePin ( LED_0_GPIO_Port , LED_0_Pin ,
-												   	  	  	 GPIO_PIN_SET ) ;
-	case 1:
-		HAL_GPIO_WritePin ( LED_1_GPIO_Port , LED_1_Pin ,
-												   	  	  	 GPIO_PIN_RESET ) ;
-		HAL_Delay(100);
-		x++;
-				HAL_GPIO_WritePin ( LED_1_GPIO_Port , LED_1_Pin ,
-																   	  	  	 GPIO_PIN_SET ) ;
-	case 2:
-		HAL_GPIO_WritePin ( LED_2_GPIO_Port , LED_2_Pin ,
-												   	  	  	 GPIO_PIN_RESET ) ;
-		HAL_Delay(100);
-		x++;
-				HAL_GPIO_WritePin ( LED_2_GPIO_Port , LED_2_Pin ,
-																   	  	  	 GPIO_PIN_SET ) ;
-	case 3:
-		HAL_GPIO_WritePin ( LED_3_GPIO_Port , LED_3_Pin ,
-												   	  	  	 GPIO_PIN_RESET ) ;
-		HAL_Delay(100);
-		x++;
-				HAL_GPIO_WritePin ( LED_3_GPIO_Port , LED_3_Pin ,
-																   	  	  	 GPIO_PIN_SET ) ;
-	case 4:
-		HAL_GPIO_WritePin ( LED_4_GPIO_Port , LED_4_Pin ,
-												   	  	  	 GPIO_PIN_RESET ) ;
-		HAL_Delay(100);
-		x++;
-				HAL_GPIO_WritePin ( LED_4_GPIO_Port , LED_4_Pin ,
-																   	  	  	 GPIO_PIN_SET ) ;
-	case 5:
-		HAL_GPIO_WritePin ( LED_5_GPIO_Port , LED_5_Pin ,
-												   	  	  	 GPIO_PIN_RESET ) ;
-		HAL_Delay(100);
-		x++;
-				HAL_GPIO_WritePin ( LED_5_GPIO_Port , LED_5_Pin ,
-																   	  	  	 GPIO_PIN_SET ) ;
-	case 6:
-		HAL_GPIO_WritePin ( LED_6_GPIO_Port , LED_6_Pin ,
-												   	  	  	 GPIO_PIN_RESET ) ;
-		HAL_Delay(100);
-		x++;
-				HAL_GPIO_WritePin ( LED_6_GPIO_Port , LED_6_Pin ,
-																   	  	  	 GPIO_PIN_SET ) ;
-	case 7:
-		HAL_GPIO_WritePin ( LED_7_GPIO_Port , LED_7_Pin ,
-												   	  	  	 GPIO_PIN_RESET ) ;
-		HAL_Delay(100);
-		x++;
-				HAL_GPIO_WritePin ( LED_7_GPIO_Port , LED_7_Pin ,
-																   	  	  	 GPIO_PIN_SET ) ;
-	case 8:
-		HAL_GPIO_WritePin ( LED_8_GPIO_Port , LED_8_Pin ,
-												   	  	  	 GPIO_PIN_RESET ) ;
-		HAL_Delay(100);
-		x++;
-				HAL_GPIO_WritePin ( LED_8_GPIO_Port , LED_8_Pin ,
-																   	  	  	 GPIO_PIN_SET ) ;
-	case 9:
-		HAL_GPIO_WritePin ( LED_9_GPIO_Port , LED_9_Pin ,
-												   	  	  	 GPIO_PIN_RESET ) ;
-		HAL_Delay(100);
-		x++;
-				HAL_GPIO_WritePin ( LED_9_GPIO_Port , LED_9_Pin ,
-																   	  	  	 GPIO_PIN_SET ) ;
-	case 10:
-		HAL_GPIO_WritePin ( LED_10_GPIO_Port , LED_10_Pin ,
-												   	  	  	 GPIO_PIN_RESET ) ;
-		HAL_Delay(100);
-		x++;
-				HAL_GPIO_WritePin ( LED_10_GPIO_Port , LED_10_Pin ,
-																   	  	  	 GPIO_PIN_SET ) ;
-	default:
-		HAL_GPIO_WritePin ( LED_11_GPIO_Port , LED_11_Pin ,
-												   	  	  	 GPIO_PIN_RESET ) ;
-				HAL_Delay(100);
-				x++;
-				HAL_GPIO_WritePin ( LED_11_GPIO_Port , LED_11_Pin ,
-																   	  	  	 GPIO_PIN_SET ) ;
-	}
-
-	}
-}
-
-*/int main(void)
+int main(void)
 {
   /* USER CODE BEGIN 1 */
 
@@ -395,16 +283,16 @@ clearAllClock();
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  int count=0;
+  //clearAllClock();
+  //int count =0;
   while (1)
   {
     /* USER CODE END WHILE */
+
+	  int sec,min,hour;
+	  sec=10;min=34;hour=9;
+	  realclock(sec,min,hour);
 	  HAL_Delay(1000);
-	  clearNumberOnClock(count);
-	  count++;
-
-
-    /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
 }
